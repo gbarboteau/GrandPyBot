@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_template.css') }}">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+    
+  </head>
+    <body class="d-flex flex-column h-100" data-gr-c-s-loaded="true">
+
+      <header class="">
+        <!-- Cadre/image -->
+        <div class="jumbotron my-top-jumbotron no-pad-or-marg">
+          <div class="container ">
+            <div class="row align-items-center">
+              <div class="col-12 col-md-6 center-block" style="text-align:center;">
+                  <img src="{{ url_for('static', filename='img/papy1.jpg') }}" class="rounded-circle banner-image" alt="JPKOF le champion de jeux de baston">
+              </div>
+              <div class="col-12 col-md-5 center-block" style="text-align:center;">
+                  <p class="title" style="text-align:right;">GrandPyBot</p>
+                  <p class="tagline" style="text-align:right;">Mais pourquoi est-il si gentil ?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="more-padding-top more-padding-bottom"></div>
+      
+      <div class="container ">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6 center-block more-padding-bottom" style="text-align:center;">
+              <img src="{{ url_for('static', filename='img/jpkof2.jpg') }}" class="rounded-circle banner-image" alt="JPKOF le champion de jeux de baston">
+          </div>
+          <div class="col-12 col-md-6 center-block more-padding-bottom" style="text-align:center;">
+              <!-- <p>"Dis-moi petit canard des îles... Que veux-tu savoir ?</p> -->
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">"Dis-moi petit canard des îles... Que veux-tu savoir ?"</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Posez votre question">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="more-padding-top more-padding-bottom"></div>
+
+      <footer class="footer mt-auto py-3">
+        <div class="container" style="text-align:right;">
+          <span class="text-muted">Copyright <a href="https://github.com/gbarboteau/">Gabrielle Barboteau</a> © 2020</span>
+        </div>
+      </footer>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.js') }}"></script>
+
+  </body>
+</html>

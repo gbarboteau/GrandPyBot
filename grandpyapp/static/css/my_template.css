@@ -1,0 +1,132 @@
+/*#sticky-footer {
+  flex-shrink: none;
+}
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+*/
+body{
+	/*margin-top: 50px;*/
+	font-family: "Open Sans", Times, serif;
+}
+
+p{
+	font-size: 20px;
+}
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.footer {
+  background-color: rgb(20, 20, 20);
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 100%;
+}
+
+.bkg-grey{
+	background-color: #ffccff;
+	color: white;
+}
+
+.my-top-jumbotron{
+	/*background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("https://cdn.radiofrance.fr/s3/cruiser-production/2016/03/48427e7d-54f6-4bf5-80df-12cc2ca1a476/870x489_maxpeopleworld364690.jpg");*/
+	background-color: #ffccff;
+	color: white;
+	min-height: 100px;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 30px 40px;
+}
+
+.footer{
+	min-height: 70px;
+	background-color: #ffccff;
+}
+
+#grad {
+  background-image: linear-gradient(to bottom, rgba(120,120,120,1), rgba(120,120,120,0));
+}
+
+.bg-custom-2 {
+background-image: linear-gradient(to bottom, #13547a 0%, #80d0c7 100%);
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.handwritten{
+	font-family: 'Parisienne';
+	font-size: 5em;
+}
+
+.italic-title{
+	font-family: "Open Sans", Times, serif;
+	font-size: 3em;
+	font-style: italic;
+}
+
+.italic-small-title{
+	font-family: "Open Sans", Times, serif;
+	font-size: 2em;
+	font-style: italic;
+}
+
+.newsletter-p{
+	font-size : 1.6em;
+}
+
+.more-padding-bottom{
+	padding-bottom: 25px;
+}
+
+.more-padding-top{
+	padding-top: 25px;
+}
+
+.text-muted a{
+	color: #e600e6;
+	text-decoration: underline;
+}
+
+.text-muted a:hover{
+	font-size: 20px;
+}
+
+.banner-image{
+	max-height: 200px;
+	min-height: 100px;
+	width: auto;
+}
+
+.title{
+	font-family: 'Parisienne';
+	font-size: 5em;
+}
+
+.tagline{
+	font-family: 'Parisienne';
+	font-size: 2em;
+}
+
+.no-pad-or-marg{
+
+}
