@@ -31,11 +31,14 @@ def search():
         try:
             MyDesc = myWiki.get_story(search)
         except:
-            MyDesc = "Je ne trouve pas d'histoire lié ! Gomendozei !!! é_è"
+            MyDesc = ""
+            wiki_phrase = "Je ne trouve pas d'histoire lié ! Gomendozei !!! é_è"
         print(MyDesc)
     except:
-        info_id = "Oups ! Je n'ai pas compris, peux-tu réeesayer ?"
+        info_id = ""
+        place_phrase = "Je ne comprends pas ce que tu me dis caneton !"
         MyDesc = ""
+        wiki_phrase = ""
     return json.dumps({"MyDesc":MyDesc, "info_id":info_id, "place_phrase":place_phrase, "wiki_phrase":wiki_phrase})
 
 
