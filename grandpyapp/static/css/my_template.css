@@ -1,21 +1,7 @@
-/*#sticky-footer {
-  flex-shrink: none;
-}
-
-.container {
-  width: auto;
-  max-width: 680px;
-  padding: 0 15px;
-}
-
-.footer {
-  background-color: #f5f5f5;
-}
-
-*/
 body{
-	/*margin-top: 50px;*/
 	font-family: "Open Sans", Times, serif;
+	background: url("../img/floralbkg.jpg");
+	background-repeat: repeat;
 }
 
 p{
@@ -45,7 +31,6 @@ code {
 }
 
 .my-top-jumbotron{
-	/*background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url("https://cdn.radiofrance.fr/s3/cruiser-production/2016/03/48427e7d-54f6-4bf5-80df-12cc2ca1a476/870x489_maxpeopleworld364690.jpg");*/
 	background-color: #ffccff;
 	color: white;
 	min-height: 100px;
@@ -127,6 +112,6 @@ background-image: linear-gradient(to bottom, #13547a 0%, #80d0c7 100%);
 	font-size: 2em;
 }
 
-.no-pad-or-marg{
-
+.bkg-white{
+	background-color: white;
 }

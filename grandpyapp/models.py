@@ -16,7 +16,7 @@ class Content(db.Model):
 def init_db():
     db.drop_all()
     db.create_all()
-    db.session.add(Content("THIS IS SPARTAAAAAAA!!!"))
-    db.session.add(Content("What's your favorite scary movie?"))
+    db.session.add(Content("Bonjour mon petit fardadet des étoiles !"))
+    db.session.add(Content("Salutations ma petite douceur des îles !"))
     db.session.commit()
     lg.warning('Database initialized!')
