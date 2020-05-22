@@ -15,10 +15,37 @@ class Parser():
         self.newSentence = ""
 
     def return_parsed(self, sentence):
-        self.sentenceWords = sentence.split()
+        self.clean_sentence = self.return_no_punctuation(sentence.lower())
+        self.clean_sentence = self.return_remove_spaces(self.clean_sentence)
+        self.sentenceWords = self.clean_sentence.split()
         self.newWords = [word for word in self.sentenceWords if word not in self.stopwords]
         self.newSentence = " ".join(self.newWords)
+        # self.newSentence = self.return_no_punctuation(self.newSentence)
+        # self.newSentence = self.return_remove_spaces(self.newSentence)
         return self.newSentence
+
+    def return_no_punctuation(self, sentence):
+        punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        self.sentence_without_punctuation = ""
+        for char in sentence:
+            if char not in punctuations:
+                self.sentence_without_punctuation = self.sentence_without_punctuation + char
+            else: 
+                self.sentence_without_punctuation = self.sentence_without_punctuation + " "
+        self.sentence_without_punctuation = self.return_remove_spaces(self.sentence_without_punctuation)
+        return self.sentence_without_punctuation
+
+    def return_remove_spaces(self, sentence):
+        # self.new_words = sentence.split(" ")
+        self.new_words = [words.strip() for words in sentence.split(" ")]
+        # self.new_sentence = " ".join(self.new_words)
+        self.new_sentence = ""
+        for i in range(0, len(self.new_words)):
+            if self.new_words[i] != '':
+                self.new_sentence = self.new_sentence + self.new_words[i] + " "
+        self.new_sentence = self.new_sentence[0:-1]
+        return self.new_sentence
+
 
 class GoogleMaps():
     def get_address(self, search):
@@ -32,6 +59,7 @@ class GoogleMaps():
         longitude = myAddress["result"]["geometry"]["location"]["lng"]
         print(myAdressFormatted, latitude, longitude)
         return(myAdressFormatted, latitude, longitude)
+
 
 class Wikimedia():
     def get_story(self, myTitle):
