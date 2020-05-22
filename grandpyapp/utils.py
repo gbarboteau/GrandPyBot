@@ -28,8 +28,10 @@ class GoogleMaps():
         myAddressRequest = requests.get(GOOGLE_MAP_GEOCACHE + "?key=" + GOOGLE_MAP_KEY + "&place_id=" + myPlaceID)
         myAddress = myAddressRequest.json()
         myAdressFormatted = myAddress['result']['formatted_address']
-        print(myAdressFormatted)
-        return(myAdressFormatted)
+        latitude = myAddress["result"]["geometry"]["location"]["lat"]
+        longitude = myAddress["result"]["geometry"]["location"]["lng"]
+        print(myAdressFormatted, latitude, longitude)
+        return(myAdressFormatted, latitude, longitude)
 
 class Wikimedia():
     def get_story(self, myTitle):

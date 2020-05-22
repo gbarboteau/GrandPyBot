@@ -51,6 +51,7 @@
           </div>
           <div id="image-answer" class="col-12 col-md-6 center-block more-padding-bottom" style="text-align:center;">
               <img src="{{ url_for('static', filename='img/jpkof3.jpg') }}" class="rounded-circle banner-image" alt="JPKOF le champion de jeux de baston">
+              <div class="more-padding-top more-padding-bottom"><div id="map"></div></div>
           </div>
         </div>
       <div class="more-padding-top more-padding-bottom"></div>  
@@ -63,6 +64,7 @@
       </footer>
 
     <!-- Bootstrap Core JavaScript -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAP_KEY }}&callback=initMap"></script>
     <script src="{{ url_for('static', filename='js/jquery/jquery.js') }}" type=text/javascript></script>
     <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.js') }}" type=text/javascript></script>
     <script src="{{ url_for('static', filename='js/utils.js') }}" type=text/javascript></script>

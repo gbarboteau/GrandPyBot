@@ -115,3 +115,8 @@ background-image: linear-gradient(to bottom, #13547a 0%, #80d0c7 100%);
 .bkg-white{
 	background-color: white;
 }
+
+#map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+}
