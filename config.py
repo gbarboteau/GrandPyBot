@@ -1,16 +1,11 @@
 # To generate a new secret key:
 import os
 
-# >>> import random, string
-# >>> "".join([random.choice(string.printable) for _ in range(24)])
 SECRET_KEY = os.environ['SECRET_KEY']
 
-# FB_APP_ID = 3412690142092872
-
 basedir = os.path.abspath(os.path.dirname(__file__))
-# SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
 
-STOP_WORDS = os.path.join(basedir, 'grandpyapp', 'scripts', 'fr.json')
+STOP_WORDS = os.path.join(basedir, 'grandpyapp', 'scripts', 'fr-improved.json')
 
 GREETINGS_PHRASES = ["Bonjour mon petit fardadet des étoiles ! Où veux-tu que je t'emmènes ?" ,"Salutations ma petite douceur de Pologne ! Quel endroit souhaites-tu explorer ?", "Dis-moi petit canard des îles... Que veux-tu savoir ?"]
 PLACE_PHRASES = ["Je connais cet endroit, ô divin tiramisu !", "Ca me dit quelque chose, loukoum de Normandie !", "J'y suis allé samedi dernier, petit éclair au matcha !"]
