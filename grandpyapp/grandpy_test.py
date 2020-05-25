@@ -1,26 +1,30 @@
 import pytest
+import urllib.request
 from .utils import Parser, GoogleMaps, Wikimedia, remove_html_tags
 import config
-import urllib.request
 
 class TestParser:
 
     def test_parser_no_spaces(self):
+        """Test the return_remove_spaces function from the Parser class"""
         my_parser = Parser()
         sentence = my_parser.return_remove_spaces(" bonjour  tout  le monde  ")
         assert sentence == "bonjour tout le monde"
 
     def test_parser_punctuation(self):
+        """Test the return_no_punctuation function from the Parser class"""
         my_parser = Parser()
         sentence = my_parser.return_no_punctuation("openclassrooms !!!")
         assert sentence == "openclassrooms"
 
     def test_parser_stopwords(self):
+        """Test the return_parsed function from the Parser class"""
         my_parser = Parser()
         sentence = my_parser.return_parsed("Bonjour Papy, dis-moi où est Openclassrooms ?")
         assert sentence == "openclassrooms"
 
     def test_googlemaps_get_adress(self, monkeypatch):
+        """Test the get_address function from the Parser class"""
         my_googlemaps = GoogleMaps()
         my_adress_and_coordinates = my_googlemaps.get_address("openclassrooms")
         data = {
@@ -42,6 +46,7 @@ class TestParser:
         assert my_adress_and_coordinates == (data["formatted_address"], data["geometry"]["location"]["lat"], data["geometry"]["location"]["lng"])
 
     def test_wikimedia_get_story(self, monkeypatch):
+        """Test the get_story function from the Parser class"""
         my_wikimedia = Wikimedia()
         my_summary = my_wikimedia.get_story("openclassrooms")
         data = {

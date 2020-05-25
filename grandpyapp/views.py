@@ -13,7 +13,8 @@ app.config.from_object('config')
 @app.route("/index/")
 def index():
     hello_phrase = random.choice(config.GREETINGS_PHRASES)
-    return render_template('index.html', hello_phrase=hello_phrase, GOOGLE_MAP_KEY=config.GOOGLE_MAP_KEY)
+    return render_template('index.html', 
+        hello_phrase=hello_phrase, GOOGLE_MAP_KEY=config.GOOGLE_MAP_KEY)
 
 
 @app.route('/search', methods=['GET'])
@@ -42,7 +43,9 @@ def search():
         MyDesc = ""
         wiki_phrase = ""
     print(info_id, latitude, longitude)
-    return json.dumps({"MyDesc":MyDesc, "info_id":info_id, "latitude":latitude, "longitude":longitude, "place_phrase":place_phrase, "wiki_phrase":wiki_phrase, "GOOGLE_MAP_KEY":config.GOOGLE_MAP_KEY})
+    return json.dumps({"MyDesc":MyDesc, "info_id":info_id, "latitude":latitude, 
+        "longitude":longitude, "place_phrase":place_phrase, "wiki_phrase":wiki_phrase, 
+        "GOOGLE_MAP_KEY":config.GOOGLE_MAP_KEY})
 
 
 if __name__ == "__main__":

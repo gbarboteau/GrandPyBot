@@ -1,13 +1,14 @@
 # coding: utf-8
-import sys
-import re
+import sys, re, json, requests
 from config import STOP_WORDS, GOOGLE_MAP_ADRESS, GOOGLE_MAP_GEOCACHE, GOOGLE_MAP_KEY, WIKIPEDIA_ADDRESS, WIKIPEDIA_PAGE
-import json
-import requests 
 
 
 class Parser():
+    """A parser removing words from a given
+    sentence.
+    """
     def __init__(self):
+        """Init the parser"""
         self.sentenceWords = ""
         with open(STOP_WORDS, encoding='utf-8') as f:
             self.stopwords = json.load(f)
@@ -15,19 +16,19 @@ class Parser():
         self.newSentence = ""
 
     def return_parsed(self, sentence):
+        """Return a sentence without the stop words"""
         self.clean_sentence = self.return_no_punctuation(sentence.lower())
         self.clean_sentence = self.return_remove_spaces(self.clean_sentence)
         self.sentenceWords = self.clean_sentence.split()
-        self.newWords = [word for word in self.sentenceWords if word not in self.stopwords]
+        self.newWords = [word for word in self.sentenceWords if word not in self.stopwords] #Remove any words among the stop word lists
         self.newSentence = " ".join(self.newWords)
-        # self.newSentence = self.return_no_punctuation(self.newSentence)
-        # self.newSentence = self.return_remove_spaces(self.newSentence)
         return self.newSentence
 
     def return_no_punctuation(self, sentence):
-        punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        """Return a sentence without any punctuation"""
+        punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~''' #the list of unwanted characters
         self.sentence_without_punctuation = ""
-        for char in sentence:
+        for char in sentence:   #Add a character to a string if it's not an unwanted character
             if char not in punctuations:
                 self.sentence_without_punctuation = self.sentence_without_punctuation + char
             else: 
@@ -36,11 +37,10 @@ class Parser():
         return self.sentence_without_punctuation
 
     def return_remove_spaces(self, sentence):
-        # self.new_words = sentence.split(" ")
+        """Remove useless whitespaces"""
         self.new_words = [words.strip() for words in sentence.split(" ")]
-        # self.new_sentence = " ".join(self.new_words)
         self.new_sentence = ""
-        for i in range(0, len(self.new_words)):
+        for i in range(0, len(self.new_words)):  #Recompose a sentence so there is no useless whitespace
             if self.new_words[i] != '':
                 self.new_sentence = self.new_sentence + self.new_words[i] + " "
         self.new_sentence = self.new_sentence[0:-1]
@@ -48,7 +48,11 @@ class Parser():
 
 
 class GoogleMaps():
+    """An instance of an object using the
+    Google Map API.
+    """
     def get_address(self, search):
+        """Get an adress and its coordinates from a name"""
         myRequest = requests.get(GOOGLE_MAP_ADRESS + "?key=" + GOOGLE_MAP_KEY + "&inputtype=textquery&input=" + search)
         myInfos = myRequest.json()
         myPlaceID = myInfos['candidates'][0]['place_id']
@@ -62,7 +66,11 @@ class GoogleMaps():
 
 
 class Wikimedia():
+    """An instance of an object using the
+    Wikimedia API.
+    """
     def get_story(self, myTitle):
+        """Return the extract of a Wikipedia article"""
         myRequest = requests.get(WIKIPEDIA_ADDRESS + myTitle)
         myInfos = myRequest.json()
         myPage = myInfos['query']['search'][0]['title']
