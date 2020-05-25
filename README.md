@@ -1,4 +1,4 @@
-GrandPyBot
+**GrandPyBot**
 
 How to use the app
 
