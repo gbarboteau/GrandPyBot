@@ -26,7 +26,6 @@ button.on('click', function(event) {
             $("#image-answer").show();
             $("#answers").append('<p class="answer"><div>' + search['place_phrase'] + " L'adresse est le " + search['info_id'] + '<br>' +'</div></p>');
             $("#answers").append('<p class="answer"><div>' + search['wiki_phrase'] + " " + search['MyDesc']  + '<br>' + '</div></p>');
-            // $("#image-answer").append('<div class="more-padding-top more-padding-bottom"><div id="map">' + '</div></div>');
             initMap(parseFloat(search['latitude']), parseFloat(search['longitude']));
         }
     })
