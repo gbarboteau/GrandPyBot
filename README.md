@@ -1,5 +1,7 @@
 **GrandPyBot**
 
+The project is avilable here : https://grandpymaps.herokuapp.com/
+
 How to use the app
 
 *1 - Run the requirements.txt file*
