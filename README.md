@@ -1,6 +1,6 @@
 **GrandPyBot**
 
-The project is avilable here : https://grandpymaps.herokuapp.com/
+The project is available here : https://grandpymaps.herokuapp.com/
 
 How to use the app
 
